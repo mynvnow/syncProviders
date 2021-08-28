@@ -53,59 +53,6 @@
             "\"": ""
         }
     },
-    "zooqle": {
-        "name": "zooqle",
-        "enabled": false,
-        "languages": [
-            "en"
-        ],
-        "base_url": "https://zooqle.com",
-        "fallback_urls": [
-            "https://zooqle.t0r.club",
-            "https://zooqle-com.unblocksites.fun",
-            "https://zooqle.unblocked.win",
-            "https://zooqle.nocensor.xyz",
-            "https://zooqle.unblocked.llc",
-            "https://zooqle.unblocked.krd",
-            "https://zooqle.p4y.info"
-        ],
-        "response_type": "text",
-        "separator": "+",
-        "movie": {
-            "query": "/search?q={query}",
-            "keywords": "{title} {year}"
-        },
-        "episode": {
-            "query": "/search?q={query}",
-            "keywords": "{title} {episodeCode}"
-        },
-        "season": {
-            "query": "/search?q={query}",
-            "keywords": [
-                "{title} {seasonCode}",
-                "{title} season"
-            ]
-        },
-        "anime": {
-            "query": "/search?q={query}",
-            "keywords": "{title} {absoluteNumber}"
-        },
-        "html_parser": {
-            "row": "doc.querySelectorAll('.table-torrents tbody tr')",
-            "title": "row.querySelector('a').textContent",
-            "peers": "row.querySelector('td:nth-child(6) .prog-r') ? row.querySelector('td:nth-child(6) .prog-r').textContent : 0",
-            "seeds": "row.querySelector('td:nth-child(6) .prog-l') ? row.querySelector('td:nth-child(6) .prog-l').textContent : 0",
-            "size": "row.querySelector('td:nth-child(4) .prog-l').textContent.replace('K','000')",
-            "url": "row.querySelectorAll('a')[2].getAttribute('href')"
-        },
-        "source_is_in_sub_page": false,
-        "title_replacement": {
-            ".": "",
-            ":": "",
-            "'": "",
-            "&": ""
-        }
-    },
     "_1337x": {
         "name": "1337x",
         "enabled": true,
@@ -157,48 +104,6 @@
         "title_replacement": {
             "'s": "s",
             "\"": ""
-        }
-    },
-    "solidtorrents": {
-        "name": "solidtorrents",
-        "enabled": false,
-        "languages": [
-            "en"
-        ],
-        "base_url": "https://solidtorrents.net/api/v1/search?q={query}&category=video&sort=seeders",
-        "response_type": "json",
-        "movie": {
-            "query": "",
-            "keywords": "{title} {year}"
-        },
-        "episode": {
-            "query": "",
-            "keywords": "{title} {episodeCode}"
-        },
-        "season": {
-            "query": "",
-            "keywords": [
-                "{title} {seasonCode}",
-                "{title} season"
-            ]
-        },
-        "anime": {
-            "query": "",
-            "keywords": "{title} {absoluteNumber}"
-        },
-        "json_format": {
-            "results": "results",
-            "url": "magnet",
-            "title": "title",
-            "seeds": "swarm.seeders",
-            "peers": "swarm.leechers",
-            "size": "size"
-        },
-        "title_replacement": {
-            ".": "",
-            ":": "",
-            "'": "",
-            "&": ""
         }
     }
 }
