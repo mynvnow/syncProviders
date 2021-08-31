@@ -53,34 +53,6 @@
             "\"": ""
         }
     },
-    "_mvrulz": {
-        "name": "mvrulz",
-        "enabled": true,
-        "languages": [
-            "en"
-        ],
-        "base_url": "https://7movierulz.mn",
-        "fallback_urls": [],
-        "response_type": "text",
-        "movie": {
-            "query": "/?s=/{query}",
-            "keywords": "{title} {year}"
-        },
-        "separator": "+",
-        "html_parser": {
-            "row": "doc.querySelectorAll('tbody > tr')",
-            "title": "row.querySelector('a:nth-child(2)').innerHTML",
-            "peers": "row.querySelector('.leeches').innerHTML",
-            "seeds": "row.querySelector('.seeds').innerHTML",
-            "size": "row.querySelector('tbody > tr .size').textContent.split('B')[0] + 'B'",
-            "url": "row.querySelector('a:nth-child(2)').getAttribute('href')"
-        },
-        "source_is_in_sub_page": true,
-        "title_replacement": {
-            "'s": "s",
-            "\"": ""
-        }
-    },
     "_1337x": {
         "name": "1337x",
         "enabled": true,
@@ -181,5 +153,47 @@
             "\"": "",
             "*": ""
         }
+    },
+  "solidtorrents": {
+    "name": "solidtorrents",
+    "enabled": true,
+    "languages": [
+      "en"
+    ],
+    "base_url": "https://solidtorrents.net/api/v1/search?q={query}&category=video&sort=seeders",
+    "response_type": "json",
+    "movie": {
+      "query": "",
+      "keywords": "{title} {year}"
+    },
+    "episode": {
+      "query": "",
+      "keywords": "{title} {episodeCode}"
+    },
+    "season": {
+      "query": "",
+      "keywords": [
+        "{title} {seasonCode}",
+        "{title} season"
+      ]
+    },
+    "anime": {
+      "query": "",
+      "keywords": "{title} {absoluteNumber}"
+    },
+    "json_format": {
+      "results": "results",
+      "url": "magnet",
+      "title": "title",
+      "seeds": "swarm.seeders",
+      "peers": "swarm.leechers",
+      "size": "size"
+    },
+    "title_replacement": {
+      ".": "",
+      ":": "",
+      "'": "",
+      "&": ""
     }
+  }
 }
