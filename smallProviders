@@ -53,6 +53,34 @@
             "\"": ""
         }
     },
+    "_mvrulz": {
+        "name": "mvrulz",
+        "enabled": true,
+        "languages": [
+            "en"
+        ],
+        "base_url": "https://7movierulz.mn",
+        "fallback_urls": [],
+        "response_type": "text",
+        "movie": {
+            "query": "/?s=/{query}",
+            "keywords": "{title} {year}"
+        },
+        "separator": "+",
+        "html_parser": {
+            "row": "doc.querySelectorAll('tbody > tr')",
+            "title": "row.querySelector('a:nth-child(2)').innerHTML",
+            "peers": "row.querySelector('.leeches').innerHTML",
+            "seeds": "row.querySelector('.seeds').innerHTML",
+            "size": "row.querySelector('tbody > tr .size').textContent.split('B')[0] + 'B'",
+            "url": "row.querySelector('a:nth-child(2)').getAttribute('href')"
+        },
+        "source_is_in_sub_page": true,
+        "title_replacement": {
+            "'s": "s",
+            "\"": ""
+        }
+    },
     "_1337x": {
         "name": "1337x",
         "enabled": true,
