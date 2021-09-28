@@ -1,7 +1,7 @@
 {
     "_manifest": {
-        "name": "Squizzlemod - Fast",
-        "id": "squizzlemod.fast",
+        "name": "rarbg-only",
+        "id": "rarbg.api",
         "version": 2,
         "classPath": "",
         "permaUrl": "https://raw.githubusercontent.com/mynvnow/syncProviders/main/rarbgOnly"
