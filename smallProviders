@@ -154,46 +154,139 @@
             "*": ""
         }
     },
-  "solidtorrents": {
-    "name": "solidtorrents",
-    "enabled": true,
-    "languages": [
-      "en"
-    ],
-    "base_url": "https://solidtorrents.net/api/v1/search?q={query}&category=video&sort=seeders",
-    "response_type": "json",
-    "movie": {
-      "query": "",
-      "keywords": "{title} {year}"
+    "solidtorrents": {
+        "name": "solidtorrents",
+        "enabled": true,
+        "languages": [
+            "en"
+        ],
+        "base_url": "https://solidtorrents.net/api/v1/search?q={query}&category=video&sort=seeders",
+        "response_type": "json",
+        "movie": {
+            "query": "",
+            "keywords": "{title} {year}"
+        },
+        "episode": {
+            "query": "",
+            "keywords": "{title} {episodeCode}"
+        },
+        "season": {
+            "query": "",
+            "keywords": [
+                "{title} {seasonCode}",
+                "{title} season"
+            ]
+        },
+        "anime": {
+            "query": "",
+            "keywords": "{title} {absoluteNumber}"
+        },
+        "json_format": {
+            "results": "results",
+            "url": "magnet",
+            "title": "title",
+            "seeds": "swarm.seeders",
+            "peers": "swarm.leechers",
+            "size": "size"
+        },
+        "title_replacement": {
+            ".": "",
+            ":": "",
+            "'": "",
+            "&": ""
+        }
     },
-    "episode": {
-      "query": "",
-      "keywords": "{title} {episodeCode}"
+    "limetorrents": {
+        "anime": {
+            "keywords": "{title} {episode}",
+            "query": "/search/anime/{query}"
+        },
+        "base_url": "https://www.limetorrents.info",
+        "enabled": true,
+        "episode": {
+            "keywords": "{title} {episodeCode}",
+            "query": "/search/tv/{query}"
+        },
+        "fallback_urls": [
+            "https://www.limetorrents.asia",
+            "https://www.limetorrents.zone"
+        ],
+        "html_parser": {
+            "peers": "row.querySelector('.tdseed').textContent.replace(',','')",
+            "row": "doc.querySelectorAll('.table2 tbody tr:nth-child(n+2)')",
+            "seeds": "row.querySelector('.tdleech').textContent.replace(',','')",
+            "size": "row.querySelector('.tdnormal:nth-child(3)').textContent",
+            "title": "row.querySelector('.tt-name').textContent",
+            "url": "'https://www.limetorrents.info/'+row.querySelector('.tt-name a:nth-child(2)').getAttribute('href')"
+        },
+        "languages": [
+            "en"
+        ],
+        "movie": {
+            "keywords": "{title} {year}",
+            "query": "/search/movies/{query}"
+        },
+        "name": "limetorrents",
+        "response_type": "text",
+        "season": {
+            "keywords": "{title} {seasonCode}",
+            "query": "/search/tv/{query}"
+        },
+        "separator": "-",
+        "source_is_in_sub_page": true,
+        "title_replacement": {
+            "&": "",
+            "'": "",
+            ".": "",
+            ":": ""
+        }
     },
-    "season": {
-      "query": "",
-      "keywords": [
-        "{title} {seasonCode}",
-        "{title} season"
-      ]
-    },
-    "anime": {
-      "query": "",
-      "keywords": "{title} {absoluteNumber}"
-    },
-    "json_format": {
-      "results": "results",
-      "url": "magnet",
-      "title": "title",
-      "seeds": "swarm.seeders",
-      "peers": "swarm.leechers",
-      "size": "size"
-    },
-    "title_replacement": {
-      ".": "",
-      ":": "",
-      "'": "",
-      "&": ""
+    "torrentdownloads": {
+        "name": "torrentdownloads",
+        "enabled": true,
+        "languages": [
+            "en"
+        ],
+        "base_url": "https://www.torrentdownloads.me",
+        "fallback_urls": [
+            "https://www.torrentdownloads.info",
+            "http://torrentdownloads.d4.re"
+        ],
+        "response_type": "text",
+        "separator": "+",
+        "source_is_in_sub_page": true,
+        "movie": {
+            "query": "/search/?search={query}",
+            "keywords": "{title} {year}"
+        },
+        "episode": {
+            "query": "/search/?search={query}",
+            "keywords": "{title} {episodeCode}"
+        },
+        "season": {
+            "query": "/search/?search={query}",
+            "keywords": [
+                "{title} {seasonCode}",
+                "{title} season"
+            ]
+        },
+        "anime": {
+            "query": "/search/?search={query}",
+            "keywords": "{title} {absoluteNumber}"
+        },
+        "html_parser": {
+            "row": "doc.querySelectorAll('.inner_container')[1].querySelectorAll('.grey_bar3')",
+            "title": "row.querySelector('p a').textContent",
+            "peers": "row.querySelector('span:nth-child(3)').textContent",
+            "seeds": "row.querySelector('span:nth-child(4)').textContent",
+            "size": "row.querySelector('span:nth-child(5)').textContent",
+            "url": "row.querySelector('p a').getAttribute('href').match('http') || row.querySelector('p a').getAttribute('href').match('php') ? null : row.querySelector('p a').getAttribute('href')"
+        },
+        "title_replacement": {
+            ".": "",
+            ":": "",
+            "'": "",
+            "&": ""
+        }
     }
-  }
 }
