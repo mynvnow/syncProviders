@@ -211,7 +211,7 @@
         "fallback_urls": [
             "https://www.limetorrents.asia",
             "https://www.limetorrents.zone",
-            "https://www.limetorrents.pro".
+            "https://www.limetorrents.pro",
             "https://limetorrents.unblockit.how"
         ],
         "html_parser": {
