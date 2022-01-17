@@ -117,7 +117,8 @@
             "https://eztv.ag",
             "https://eztv.it",
             "https://eztv.ch",
-            "https://eztv.unblockit.uno"
+            "https://eztv.unblockit.uno",
+            "https://eztv.yt"
         ],
         "response_type": "text",
         "episode": {
@@ -209,7 +210,9 @@
         },
         "fallback_urls": [
             "https://www.limetorrents.asia",
-            "https://www.limetorrents.zone"
+            "https://www.limetorrents.zone",
+            "https://www.limetorrents.pro".
+            "https://limetorrents.unblockit.how"
         ],
         "html_parser": {
             "peers": "row.querySelector('.tdseed').textContent.replace(',','')",
@@ -249,6 +252,7 @@
         ],
         "base_url": "https://www.torrentdownloads.me",
         "fallback_urls": [
+            "https://www.torrentdownloads.pro",
             "https://www.torrentdownloads.info",
             "http://torrentdownloads.d4.re"
         ],
